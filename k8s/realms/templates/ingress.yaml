@@ -4,29 +4,6 @@
 #   namespace: {{ .Values.spec.appName }}
 #   name: ingress
 #   annotations:
-#     alb.ingress.kubernetes.io/ip-address-type: dualstack
-#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-#     alb.ingress.kubernetes.io/scheme: internet-facing
-#     alb.ingress.kubernetes.io/ssl-redirect: '443'
-#     alb.ingress.kubernetes.io/target-type: ip
-#     external-dns.alpha.kubernetes.io/hostname: {{ .Values.spec.hostName }}
-# spec:
-#   # tls:
-#   #   - hosts:
-#   #       - {{ .Values.spec.hostName }}
-#   ingressClassName: alb
-#   defaultBackend:
-#     service:
-#       name: {{ .Values.spec.appName }}
-#       port:
-#         number: {{ .Values.spec.containerPort }}
-
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   namespace: {{ .Values.spec.appName }}
-#   name: ingress
-#   annotations:
 #     nginx.ingress.kubernetes.io/rewrite-target: /$1
 # spec:
 #   rules:
@@ -40,17 +17,4 @@
 #                 name: {{ .Values.spec.appName }}
 #                 port:
 #                   number: {{ .Values.spec.containerPort }}
-      # ingressClassName: nginx
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   namespace: {{ .Values.spec.appName }}
-#   name: nginx
-# spec:
-#   # selector:
-#   #   hostname: proxy
-#   ports:
-#     - protocol: TCP
-#       port: 80
-#       targetPort: {{ .Values.spec.containerPort }}
+#     ingressClassName: nginx

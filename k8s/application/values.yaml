@@ -10,13 +10,6 @@ apps:
     containerPort: 80
     hostName: test1.brianriste.com
     image:
-      repo: strm/helloworld-http
-    name: app1
-    replicas: 1
-  app2:
-    containerPort: 80
-    hostName: test2.brianriste.com
-    image:
       repo: nginx
-    name: app2
+    name: app1
     replicas: 1

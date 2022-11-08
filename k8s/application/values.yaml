@@ -5,3 +5,9 @@ apps:
       repo: strm/helloworld-http
     name: app0
     replicas: 1
+  app1:
+    containerPort: 80
+    image:
+      repo: nginx
+    name: app1
+    replicas: 1

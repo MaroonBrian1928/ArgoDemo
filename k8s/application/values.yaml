@@ -10,4 +10,4 @@ apps:
     image:
       repo: nginx
     name: app1
-    replicas: 1
+    replicas: 3

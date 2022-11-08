@@ -2,7 +2,6 @@
 {{ $appName := $values.name }}
 {{ $appImage := $values.image.repo }}
 {{ $containerPort := $values.containerPort }}
-{{ $hostName := $values.hostName }}
 {{ $project := $.Values.spec.project }}
 {{- /* guarantees --- is on a newline */ -}}
 {{ printf "\n---" }}
@@ -30,7 +29,6 @@ spec:
           appImage: {{ $appImage }}
           appName: {{ $appName }}
           containerPort: {{ $containerPort }}
-          hostName: {{ $hostName }}
           project: {{ $project }}
           replicas: {{ $values.replicas }}
           repoUrl: {{ $.Values.spec.repoUrl }}

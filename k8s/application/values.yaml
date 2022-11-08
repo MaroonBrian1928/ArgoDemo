@@ -1,7 +1,6 @@
 apps:
   app0:
     containerPort: 80
-    hostName: test0.brianriste.com
     image:
       repo: strm/helloworld-http
     name: app0

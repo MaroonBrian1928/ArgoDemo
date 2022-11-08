@@ -8,6 +8,6 @@ apps:
   app1:
     containerPort: 80
     image:
-      repo: ngnix
+      repo: nginx
     name: app1
     replicas: 1

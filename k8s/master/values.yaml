@@ -1,0 +1,3 @@
+appEnvironments:
+  dev:
+    repoUrl: git@github.com:MaroonBrian1928/ArgoDemo.git

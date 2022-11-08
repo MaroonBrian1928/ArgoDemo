@@ -1,0 +1,16 @@
+{{ $appName := $.Values.spec.appName }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+  namespace: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+data:
+  index.html: |
+    <html>
+    <head>
+    <title>{{ $appName }}</title>
+    </head>
+    </br>
+    <h1>Hi! This is {{ $appName }} deployment</h1>
+    </body>
+    </html

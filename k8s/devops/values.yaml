@@ -1,0 +1,4 @@
+appEnvironments:
+  devops:
+    argoHostname: localhost
+    repoUrl: git@github.com:MaroonBrian1928/ArgoDemo.git

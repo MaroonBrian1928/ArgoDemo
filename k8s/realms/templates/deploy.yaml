@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+  name: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+  namespace: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+spec:
+  replicas: {{ .Values.spec.replicas }}
+  selector:
+    matchLabels:
+      app: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 10%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+    spec:
+      containers:
+      - image: {{ .Values.spec.appImage }}
+        name: "{{$.Values.spec.project}}-{{ .Values.spec.appName }}"
+        ports:
+        - containerPort: {{ .Values.spec.containerPort }}
